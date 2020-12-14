@@ -4,7 +4,7 @@ this project contains a performance test of [transparent-herd](https://github.co
 
 The comparison is between singular inserts and bulk inserts with insertMany where the interface is kept with singular calls through _transparent-herd_ .
 
-The test setup was of a single group of 30k inserts, an was repeated 100 times in both cases. The mean time was more than an order of magnitude faster, 277.05 s vs 3546.28 s.
+The test setup was of a single group of 30k inserts, an was repeated 100 times in both cases, the maxBatchSize of _transparent-herd_ was 10k. The mean time was more than an order of magnitude faster, 277.05 s vs 3546.28 s.
 
 ```
 TOTAL RUNS: 100
