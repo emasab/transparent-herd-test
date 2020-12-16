@@ -13,7 +13,7 @@ const runBatched = async () => {
   /*
    * The batched function gets an array of function arguments and returns an array of promises
    */
-  const batched = async (args: object[][]): Promise<Promise<any>[]> => {
+  const batched = async (args: any[][]): Promise<Promise<any>[]> => {
     // the object to insert is the first argument of each list of arguments
     const documents = args.map((arg) => arg[0]);
     try {
