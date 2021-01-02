@@ -1,11 +1,11 @@
-import transparentHerd from 'transparent-herd';
+import * as transparentHerd from 'transparent-herd';
 import { MongoClient } from 'mongodb';
 import mongoUnit from 'mongo-unit';
 let client: any;
 let collection: any;
 const numCalls: number = 30000;
 const maxBatchSize: number = 10000;
-const numMeasures: number = 100;
+const numMeasures: number = 3;
 
 type SingularCallFunction = (...args: any[]) => Promise<any>;
 
