@@ -21,7 +21,7 @@
   "dependencies": {
     "mongo-unit": "^2.0.1",
     "mongodb": "^3.6.3",
-    "transparent-herd": "^1.2.0"
+    "transparent-herd": "^1.2.1"
   },
   "devDependencies": {
     "@types/mongodb": "^3.6.3",

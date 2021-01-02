@@ -5,7 +5,7 @@ let client: any;
 let collection: any;
 const numCalls: number = 30000;
 const maxBatchSize: number = 10000;
-const numMeasures: number = 3;
+const numMeasures: number = 100;
 
 type SingularCallFunction = (...args: any[]) => Promise<any>;
 
