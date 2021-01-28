@@ -4,7 +4,7 @@ import mongoUnit from 'mongo-unit';
 let client: any;
 let collection: any;
 const numCalls: number = 30000;
-const maxBatchSize: number = 10000;
+const maxConcurrent: number = 10;
 const numMeasures: number = 100;
 
 const runBatched = async () => {
@@ -25,7 +25,7 @@ const runBatched = async () => {
   /*
    * This way you get a singular function out of the batched one
    */
-  const singular: transparentHerd.SingularFunction = transparentHerd.singular(batched, { maxBatchSize });
+  const singular: transparentHerd.SingularFunction = transparentHerd.singular(batched, { maxConcurrent });
 
   /*
    * Then you can use the singular function just as before
