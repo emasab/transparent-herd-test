@@ -4,14 +4,14 @@ import mongoUnit from 'mongo-unit';
 let client: any;
 let collection: any;
 const numCalls: number = 30000;
-const maxConcurrent: number = 10;
-const numMeasures: number = 100;
+const maxBatchSize: number = 1000;
+const numMeasures: number = 5;
 
 const runBatched = async () => {
   /*
    * The batched function gets an array of function arguments and returns an array of promises
    */
-  const batched : transparentHerd.BatchedFunction = async (args) => {
+  const batched: transparentHerd.BatchedFunction = async (args) => {
     // the object to insert is the first argument of each list of arguments
     const documents = args.map((arg) => arg[0]);
     try {
@@ -25,7 +25,7 @@ const runBatched = async () => {
   /*
    * This way you get a singular function out of the batched one
    */
-  const singular: transparentHerd.SingularFunction = transparentHerd.singular(batched, { maxConcurrent });
+  const singular: transparentHerd.SingularFunction = transparentHerd.singular(batched, { maxBatchSize });
 
   /*
    * Then you can use the singular function just as before
